@@ -1,5 +1,5 @@
 ﻿.custom-footer {
-    background-color: black;
+    background: linear-gradient(rgba(15, 15, 15) 0%, rgba(8, 8, 8) 20%, black 50%, rgba(8, 8, 8) 80%, rgba(15, 15, 15) 100%);
     color: white;
     padding: 20px 0;
     text-align: center;
