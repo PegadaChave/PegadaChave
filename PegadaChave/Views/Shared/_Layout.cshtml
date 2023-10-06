@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/FooterStyle.css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -24,11 +25,37 @@
             </div>
         </div>
     </nav>
-    <div class="container body-content">
+    <div class="">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer class="custom-footer">
+            <div class="store-name">Pegada Chave</div>
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>AJUDA</h4>
+                    <ul>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                        <li><a href="#">Compra</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-item">
+                    <h4>PRIVACIDADE E LEGALIDADES</h4>
+                    <ul>
+                        <li><a href="#">Políticas de Privacidade</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Código de Ética</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>DOAÇÕES</h4>
+                    <p class="no-margin-bottom">Insira seu e-mail de contato:</p>
+                    <div class="custom-input">
+                        <input type="text" placeholder="E-mail">
+                        <span class="custom-submit-icon">&#62;</span>
+                    </div>
+                </div>
+            </div>
         </footer>
     </div>
 

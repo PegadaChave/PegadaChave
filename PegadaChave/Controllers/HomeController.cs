@@ -10,6 +10,7 @@ namespace PegadaChave.Controllers
     {
         public ActionResult Index()
         {
+            Console.WriteLine("Teste");
             return View();
         }
 
