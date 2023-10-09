@@ -1,0 +1,93 @@
+﻿body {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.options {
+    margin-top: 20px;
+}
+
+    .options a {
+        text-decoration: none;
+        color: #333;
+        margin: 0 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-bottom: 2px solid transparent;
+    }
+
+        .options a.active {
+            border-bottom-color: #000;
+        }
+
+.form-container {
+    margin-top: 20px;
+}
+
+form {
+    display: none;
+}
+
+    form.active {
+        display: block;
+    }
+
+h2 {
+    font-size: 20px;
+}
+
+.subtext {
+    color: #666;
+    font-size: 14px;
+}
+
+.input-container {
+    margin-top: 10px;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #000;
+    outline: none;
+}
+
+.forgot-password {
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.checkbox-container {
+    margin-top: 10px;
+    text-align: left;
+}
+
+label {
+    font-size: 14px;
+}
+
+.submit-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}

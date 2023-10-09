@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro e Login</title>
+    @Styles.Render("~/Content/LoginStyle.css")
+    <style id="local-styles">
+        input {
+            width: 100% !important;
+            padding: 10px !important;
+            border: none !important;
+            border-bottom: 2px solid #000 !important;
+            outline: none !important;
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>CONTA</h1>
+        <div class="options">
+            <a href="#" class="active" onclick="showForm('login-form')">ENTRAR</a>
+            <a href="#" onclick="showForm('signup-form')">CADASTRAR</a>
+        </div>
+        <div class="form-container">
+            <form id="login-form" class="active">
+                <h2>BEM VINDO(A) DE VOLTA</h2>
+                <p class="subtext">Entre com seu e-mail e senha</p>
+
+                <div class="">
+                    <input type="text" id="email" placeholder="E-mail ou número de telefone">
+                </div>
+
+                <div class="input-container">
+                    <input type="password" id="password" placeholder="Senha">
+                </div>
+
+                <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+                <button type="submit" class="submit-button">ENTRAR</button>
+            </form>
+            <form id="signup-form">
+                <h2>Crie uma conta</h2>
+                <div class="input-container">
+                    <input type="text" id="signup-email" placeholder="E-mail ou número de telefone">
+                </div>
+                <div class="input-container">
+                    <input type="password" id="signup-password" placeholder="Senha">
+                </div>
+                <div class="input-container">
+                    <input type="text" id="full-name" placeholder="Nome completo">
+                </div>
+                <div class="input-container">
+                    <input type="text" id="cpf" placeholder="CPF">
+                </div>
+                <div class="input-container">
+                    <input type="text" id="phone" placeholder="Telefone">
+                </div>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="agree">
+                    <label for="agree">Concordo com todas as políticas legais e de privacidade do Billy Duke</label>
+                </div>
+                <button type="submit" class="submit-button">CADASTRAR</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="~/Scripts/LoginScript.js"></script>
+</body>
+</html>
