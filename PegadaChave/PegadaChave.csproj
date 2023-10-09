@@ -144,6 +144,11 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\FooterStyle.css" />
+    <Content Include="Content\HeadStyle.css" />
+    <Content Include="Content\Image\Icons\bolsa.png" />
+    <Content Include="Content\Image\Icons\coracao.png" />
+    <Content Include="Content\Image\Icons\lupa.png" />
+    <Content Include="Content\Image\Icons\pessoa.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />

@@ -5,28 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/FooterStyle.css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/FooterStyle.css")
+    @Styles.Render("~/Content/HeadStyle.css")
 </head>
 <body>
-    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
-        <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+
+
+
+    <nav class="navbar navbar-expand-sm navbar-header" style="justify-content: center">
+        <div class="">
+            <div class="row">
+                <div class="col-6 text-center">
+                    <a class="navbar-brand navbar-brand-header" href="#">Billy Duke</a>
+                </div>
+                <div class="col-auto" >
+                    <ul class="navbar-nav d-flex justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-header" href="#"><i><img src="~/Content/Image/Icons/lupa.png" class="icone-header" /></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-header" href="#"><i><img src="~/Content/Image/Icons/pessoa.png" class="icone-header" /></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-header" href="#"><i><img src="~/Content/Image/Icons/coracao.png" class="icone-header" /></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-header" href="#"><i><img src="~/Content/Image/Icons/bolsa.png" class="icone-header" /></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
-    <div class="">
-        @RenderBody()
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-md-6 justify-content-end d-flex">
+                <a class="nav-link masc" href="#">MASCULINO</a>
+            </div>
+            <div class="col-md-6">
+                <a class="nav-link femi" href="#">FEMININO</a>
+            </div>
+        
+        </div>
+    </div>
+
+
+
+    <div>
+        <div style="min-height: 100%">
+
+            @RenderBody()
+        </div>
         <hr />
         <footer class="custom-footer">
             <div class="store-name">Pegada Chave</div>

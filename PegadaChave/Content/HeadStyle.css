@@ -1,0 +1,44 @@
+﻿.navbar-header {
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-brand-header {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.navbar-nav-header {
+    flex-grow: 1;
+    justify-content: flex-start; /* Mudar para flex-start para alinhar à esquerda */
+    align-items: center; /* Alinhar verticalmente ao centro */
+}
+
+.nav-link-header {
+    justify-content: center;
+    color: black;
+}
+.icone-header {
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.text-align-right {
+    text-align: right;
+}
+
+.masc {
+    margin-right: 10%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.femi {
+    margin-left: 10%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
