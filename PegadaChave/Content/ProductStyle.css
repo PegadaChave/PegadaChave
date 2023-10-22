@@ -1,0 +1,13 @@
+﻿.header-product{
+    color: black !important;
+    padding: 10px;
+}
+
+.ver-mais-link {
+    text-decoration: underline;
+    background: none;
+    border: none;
+    color: black !important;
+    cursor: pointer;
+
+}
