@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace PegadaChave.Controllers
 {
-    public class LoginController : Controller
+    public class ProductsController : Controller
     {
-        // GET: Login
+        // GET: Products
         public ActionResult Index()
         {
             return View();
