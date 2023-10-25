@@ -1,22 +1,17 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PegadaChave.Models
+[Table("LookProduto")]
+public class LookProduto
 {
-    internal class LookProduto
-    {
-        [Key]
-        [Required]
-        public int id_look { get; set; }
+    [Key, Column(Order = 0), ForeignKey("Look")]
+    [Display(Name = "ID do Look")]
+    public int IdLook { get; set; }
 
-        [Key]
-        [Required]
-        public int id_produto { get; set; }
+    [Key, Column(Order = 1), ForeignKey("Produto")]
+    [Display(Name = "ID do Produto")]
+    public int IdProduto { get; set; }
 
-        [ForeignKey("id_look")]
-        public Look Look { get; set; }
-
-        [ForeignKey("id_produto")]
-        public Produto Produto { get; set; }
-    }
+    public virtual Look Look { get; set; }
+    public virtual Produto Produto { get; set; }
 }

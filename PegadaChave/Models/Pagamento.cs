@@ -1,33 +1,31 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
-namespace PegadaChave.Models
+[Table("Pagamento")]
+public class Pagamento
 {
-    public enum MetodoPagamento
-    {
-        Debito,
-        Credito,
-        Pix,
-        Boleto
-    }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int IdPagamento { get; set; }
 
-    internal class Pagamento
-    {
-        [Key]
-        [Required]
-        public int id_pagamento { get; set; }
+    [Required]
+    [ForeignKey("Pedido")]
+    public int IdPedido { get; set; }
 
-        [Required(ErrorMessage = "O ID do pedido é obrigatório.")]
-        public int id_pedido { get; set; }
+    [Required]
+    public DateTime DataHoraPagamento { get; set; }
 
-        [Required(ErrorMessage = "A data e hora do pagamento são obrigatórias.")]
-        public DateTime data_hora_pagamento { get; set; }
+    [Required]
+    public MetodoPagamento MetodoPagamento { get; set; }
 
-        [Required(ErrorMessage = "O método de pagamento é obrigatório.")]
-        public MetodoPagamento metodo_pagamento { get; set; }
+    public virtual Pedido Pedido { get; set; }
+}
 
-        [ForeignKey("id_pedido")]
-        public Pedido Pedido { get; set; }
-    }
+public enum MetodoPagamento
+{
+    Debito,
+    Credito,
+    Pix,
+    Boleto
 }

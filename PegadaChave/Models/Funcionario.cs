@@ -1,18 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PegadaChave.Models
+[Table("Funcionario")]
+public class Funcionario
 {
-    internal class Funcionario
-    {
-        [Key]
-        [Required]
-        public int id_funcionario { get; set; }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Display(Name = "ID do Funcionário")]
+    public int IdFuncionario { get; set; }
 
-        [Required(ErrorMessage = "O ID do usuário é obrigatório.")]
-        public int id_usuario { get; set; }
+    [Required(ErrorMessage = "O ID do usuário é obrigatório.")]
+    [ForeignKey("Usuario")]
+    [Display(Name = "ID do Usuário")]
+    public int IdUsuario { get; set; }
 
-        [ForeignKey("id_usuario")]
-        public Usuario Usuario { get; set; }
-    }
+    public virtual Usuario Usuario { get; set; }
 }

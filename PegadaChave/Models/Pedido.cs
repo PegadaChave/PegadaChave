@@ -1,38 +1,41 @@
-﻿using System;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System;
 
-namespace PegadaChave.Models
+[Table("Pedido")]
+public class Pedido
 {
-    public enum StatusPedido
-    {
-        Pago,
-        Cancelado,
-        Pendente
-    }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int IdPedido { get; set; }
 
-    internal class Pedido
-    {
-        [Key]
-        [Required]
-        public int id_pedido { get; set; }
+    [Required]
+    [ForeignKey("Carrinho")]
+    public int IdCarrinho { get; set; }
 
-        [Required(ErrorMessage = "O ID do carrinho é obrigatório.")]
-        public int id_carrinho { get; set; }
+    [Required]
+    [ForeignKey("Cliente")]
+    public int IdCliente { get; set; }
 
-        [Required(ErrorMessage = "O ID do cliente é obrigatório.")]
-        public int id_cliente { get; set; }
+    [Required]
+    public DateTime DataHoraPedido { get; set; }
 
-        [Required(ErrorMessage = "A data e hora do pedido são obrigatórias.")]
-        public DateTime data_hora_pedido { get; set; }
+    [Required]
+    [ForeignKey("Endereco")]
+    public int IdEndereco { get; set; }
 
-        [Required(ErrorMessage = "O status do pedido é obrigatório.")]
-        public StatusPedido status_pedido { get; set; }
+    [Required]
+    public StatusPedido StatusPedido { get; set; }
 
-        [ForeignKey("id_carrinho")]
-        public Carrinho Carrinho { get; set; }
+    public virtual Carrinho Carrinho { get; set; }
+    public virtual Cliente Cliente { get; set; }
+    public virtual Endereco Endereco { get; set; }
+}
 
-        [ForeignKey("id_cliente")]
-        public Cliente Cliente { get; set; }
-    }
+public enum StatusPedido
+{
+    Pago,
+    Cancelado,
+    Pendente,
+    Finalizado
 }

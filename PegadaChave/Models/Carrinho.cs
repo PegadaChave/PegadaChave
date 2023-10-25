@@ -1,21 +1,20 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PegadaChave.Models
+[Table("Carrinho")]
+public class Carrinho
 {
-    internal class Carrinho
-    {
-        [Key]
-        [Required]
-        public int id_carrinho { get; set; }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int IdCarrinho { get; set; }
 
-        [Required(ErrorMessage = "O ID do cliente é obrigatório.")]
-        public int id_cliente { get; set; }
+    [Required]
+    [ForeignKey("Cliente")]
+    public int IdCliente { get; set; }
 
-        [Required(ErrorMessage = "O total do carrinho é obrigatório.")]
-        public float total_carrinho { get; set; }
+    [Required]
+    public float TotalCarrinho { get; set; }
 
-        [ForeignKey("id_cliente")]
-        public Cliente Cliente { get; set; }
-    }
+    public virtual Cliente Cliente { get; set; }
 }

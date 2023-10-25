@@ -2,39 +2,44 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PegadaChave.Models
+[Table("Cliente")]
+public class Cliente
 {
-    public enum Sexo
-    {
-        Masculino,
-        Feminino
-    }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Display(Name = "ID do Cliente")]
+    public int IdCliente { get; set; }
 
-    internal class Cliente
-    {
-        [Key]
-        [Required]
-        public int id_cliente { get; set; }
+    [Required(ErrorMessage = "O ID do usuário é obrigatório.")]
+    [ForeignKey("Usuario")]
+    [Display(Name = "ID do Usuário")]
+    public int IdUsuario { get; set; }
 
-        [Required(ErrorMessage = "O ID do usuário é obrigatório.")]
-        public int id_usuario { get; set; }
+    [Required(ErrorMessage = "O CPF do cliente é obrigatório.")]
+    [StringLength(11, ErrorMessage = "O CPF do cliente deve ter 11 caracteres.")]
+    [Display(Name = "CPF do Cliente")]
+    public string CpfCliente { get; set; }
 
-        [Required(ErrorMessage = "O CPF do cliente é obrigatório.")]
-        [StringLength(11, MinimumLength = 11, ErrorMessage = "O CPF deve ter 11 caracteres.")]
-        public string cpf_cliente { get; set; }
+    [Required(ErrorMessage = "A data de nascimento do cliente é obrigatória.")]
+    [DataType(DataType.Date)]
+    [Display(Name = "Data de Nascimento do Cliente")]
+    public DateTime DataNascimentoCliente { get; set; }
 
-        [Required(ErrorMessage = "A data de nascimento é obrigatória.")]
-        [DataType(DataType.Date, ErrorMessage = "Formato de data inválido.")]
-        public DateTime data_nascimento_cliente { get; set; }
+    [Required(ErrorMessage = "O sexo do cliente é obrigatório.")]
+    [EnumDataType(typeof(SexoCliente), ErrorMessage = "O sexo do cliente não é válido.")]
+    [Display(Name = "Sexo do Cliente")]
+    public SexoCliente SexoCliente { get; set; }
 
-        [Required(ErrorMessage = "O sexo do cliente é obrigatório.")]
-        public Sexo sexo_cliente { get; set; }
+    [Required(ErrorMessage = "O celular do cliente é obrigatório.")]
+    [StringLength(11, ErrorMessage = "O celular do cliente deve ter 11 caracteres.")]
+    [Display(Name = "Celular do Cliente")]
+    public string CelularCliente { get; set; }
 
-        [Required(ErrorMessage = "O número de celular do cliente é obrigatório.")]
-        [StringLength(11, MinimumLength = 11, ErrorMessage = "O número de celular deve ter 11 caracteres.")]
-        public string celular_cliente { get; set; }
+    public virtual Usuario Usuario { get; set; }
+}
 
-        [ForeignKey("id_usuario")]
-        public Usuario Usuario { get; set; }
-    }
+public enum SexoCliente
+{
+    Masculino,
+    Feminino
 }

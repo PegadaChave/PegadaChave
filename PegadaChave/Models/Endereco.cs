@@ -1,44 +1,52 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PegadaChave.Models
+[Table("Endereco")]
+public class Endereco
 {
-    public enum UF
-    {
-        AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA, PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO
-    }
-    internal class Endereco
-    {
-        [Key]
-        [Required]
-        public int id_endereco { get; set; }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    [Display(Name = "ID do Endereço")]
+    public int IdEndereco { get; set; }
 
-        [Required(ErrorMessage = "O ID do cliente é obrigatório.")]
-        public int id_cliente { get; set; }
+    [Required(ErrorMessage = "O ID do cliente é obrigatório.")]
+    [ForeignKey("Cliente")]
+    [Display(Name = "ID do Cliente")]
+    public int IdCliente { get; set; }
 
-        [Required(ErrorMessage = "O CEP é obrigatório.")]
-        [StringLength(8, MinimumLength = 8, ErrorMessage = "O CEP deve ter 8 caracteres.")]
-        public string cep_endereco { get; set; }
+    [Required(ErrorMessage = "O CEP do endereço é obrigatório.")]
+    [StringLength(8, ErrorMessage = "O CEP do endereço deve ter 8 caracteres.")]
+    [Display(Name = "CEP do Endereço")]
+    public string CepEndereco { get; set; }
 
-        [Required(ErrorMessage = "O logradouro é obrigatório.")]
-        [StringLength(50)]
-        public string logradouro_endereco { get; set; }
+    [Required(ErrorMessage = "O logradouro do endereço é obrigatório.")]
+    [StringLength(50, ErrorMessage = "O logradouro do endereço não pode exceder 50 caracteres.")]
+    [Display(Name = "Logradouro do Endereço")]
+    public string LogradouroEndereco { get; set; }
 
-        [Required(ErrorMessage = "O número é obrigatório.")]
-        public int numero_endereco { get; set; }
+    [Required(ErrorMessage = "O número do endereço é obrigatório.")]
+    [Display(Name = "Número do Endereço")]
+    public int NumeroEndereco { get; set; }
 
-        [Required(ErrorMessage = "O bairro é obrigatório.")]
-        [StringLength(50)]
-        public string bairro_endereco { get; set; }
+    [Required(ErrorMessage = "O bairro do endereço é obrigatório.")]
+    [StringLength(50, ErrorMessage = "O bairro do endereço não pode exceder 50 caracteres.")]
+    [Display(Name = "Bairro do Endereço")]
+    public string BairroEndereco { get; set; }
 
-        [Required(ErrorMessage = "A cidade é obrigatória.")]
-        [StringLength(50)]
-        public string cidade_endereco { get; set; }
+    [Required(ErrorMessage = "A cidade do endereço é obrigatória.")]
+    [StringLength(50, ErrorMessage = "A cidade do endereço não pode exceder 50 caracteres.")]
+    [Display(Name = "Cidade do Endereço")]
+    public string CidadeEndereco { get; set; }
 
-        [Required(ErrorMessage = "O UF é obrigatório.")]
-        public UF uf_endereco { get; set; }
+    [Required(ErrorMessage = "A UF do endereço é obrigatória.")]
+    [EnumDataType(typeof(UfEndereco), ErrorMessage = "A UF do endereço não é válida.")]
+    [Display(Name = "UF do Endereço")]
+    public UfEndereco UfEndereco { get; set; }
 
-        [ForeignKey("id_cliente")]
-        public Cliente Cliente { get; set; }
-    }
+    public virtual Cliente Cliente { get; set; }
+}
+
+public enum UfEndereco
+{
+    AC, AL, AP, AM, BA, CE, DF, ES, GO, MA, MT, MS, MG, PA, PB, PR, PE, PI, RJ, RN, RS, RO, RR, SC, SP, SE, TO
 }

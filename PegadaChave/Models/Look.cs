@@ -1,19 +1,21 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PegadaChave.Models
+[Table("Look")]
+public class Look
 {
-    internal class Look
-    {
-        [Key]
-        [Required]
-        public int id_look { get; set; }
+    [Key]
+    [Required(ErrorMessage = "O campo id_look é obrigatório.")]
+    [Display(Name = "ID do Look")]
+    public int IdLook{ get; set; }
 
-        [Required(ErrorMessage = "O nome do look é obrigatório.")]
-        [StringLength(50)]
-        public string nome_look { get; set; }
+    [Required(ErrorMessage = "O campo nome_look é obrigatório.")]
+    [StringLength(50, ErrorMessage = "O campo nome_look deve ter no máximo 50 caracteres.")]
+    [Display(Name = "Nome do Look")]
+    public string NomeLook { get; set; }
 
-        [Required(ErrorMessage = "A categoria do look é obrigatória.")]
-        [StringLength(50)]
-        public string categoria_look { get; set; }
-    }
+    [Required(ErrorMessage = "O campo categoria_look é obrigatório.")]
+    [StringLength(50, ErrorMessage = "O campo categoria_look deve ter no máximo 50 caracteres.")]
+    [Display(Name = "Categoria do Look")]
+    public string CategoriaLook { get; set; }
 }
