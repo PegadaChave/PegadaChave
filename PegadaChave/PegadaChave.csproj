@@ -112,12 +112,14 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Data\CrudDuke.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Carrinho.cs" />
     <Compile Include="Models\CarrinhoProduto.cs" />
     <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\DTOs\cadastraClienteDTO.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Funcionario.cs" />
     <Compile Include="Models\ItemPedido.cs" />
