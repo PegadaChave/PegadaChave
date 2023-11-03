@@ -3,8 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace PegadaChave.Models.DTOs
 {
-    public class cadastraclientedto
+    public class ClienteDTO
     {
+        public int idCliente { get; set; }
+        public int idUsuario { get; set; }
         [Required(ErrorMessage = "O nome do usuário é obrigatório.")]
         [StringLength(100, ErrorMessage = "o nome do usuário não pode exceder 100 caracteres.")]
         [Display(Name = "nome do usuário")]
