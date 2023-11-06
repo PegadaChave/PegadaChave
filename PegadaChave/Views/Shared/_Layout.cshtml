@@ -8,37 +8,45 @@
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/FooterStyle.css")
     @Styles.Render("~/Content/HeadStyle.css")
+    <style>
+        nav li {
+            padding: 0px 15px;
+            !important
+        }
+    </style>
 </head>
 <body>
 
 
-
-    <nav class="navbar navbar-expand-sm navbar-header" style="justify-content: center">
+    <nav class="container-fluid" style="width: auto">
         <div class="">
             <div class="row">
+                <div class="col-3"></div>
                 <div class="col-6 text-center">
                     <a class="navbar-brand navbar-brand-header" href="#">Billy Duke</a>
                 </div>
-                <div class="col-auto" >
-                    <ul class="navbar-nav d-flex justify-content-end">
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-header" href="#"><i><img src="~/Content/Image/Icons/lupa.png" class="icone-header" /></i></a>
+                <div class="col-3 d-flex justify-content-between">
+
+                    <ul class="list-unstyled d-flex align-items-center" style="margin-bottom: 0px">
+                        <li>
+                            <a href="#"><i><img src="~/Content/Image/Icons/lupa.png" class="icone-header" /></i></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-header" href="#"><i><img src="~/Content/Image/Icons/pessoa.png" class="icone-header" /></i></a>
+                        <li>
+                            <a href="#"><i><img src="~/Content/Image/Icons/pessoa.png" class="icone-header" /></i></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-header" href="#"><i><img src="~/Content/Image/Icons/coracao.png" class="icone-header" /></i></a>
+                        <li>
+                            <a href="#"><i><img src="~/Content/Image/Icons/coracao.png" class="icone-header" /></i></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-header" href="#"><i><img src="~/Content/Image/Icons/bolsa.png" class="icone-header" /></i></a>
+                        <li>
+                            <a href="#"><i><img src="~/Content/Image/Icons/bolsa.png" class="icone-header" /></i></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
-    <div class="container">
+
+    <div class="container" style="padding-top: 2.5rem">
         <div class="row mb-3">
             <div class="col-md-6 justify-content-end d-flex">
                 <a class="nav-link masc" href="#">MASCULINO</a>
@@ -46,7 +54,7 @@
             <div class="col-md-6">
                 <a class="nav-link femi" href="#">FEMININO</a>
             </div>
-        
+
         </div>
     </div>
 
