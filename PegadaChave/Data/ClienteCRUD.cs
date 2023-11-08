@@ -39,6 +39,12 @@ namespace PegadaChave.Data
                 cmdCliente.Parameters.AddWithValue("@sexocliente", clienteDTO.sexoCliente.ToString());
                 cmdCliente.Parameters.AddWithValue("@celularcliente", clienteDTO.celularCliente);
                 cmdCliente.ExecuteNonQuery();
+
+                // Criar o carrinho junto do cliente
+                string queryCarrinho = "INSERT INTO Carrinho (id_cliente, total_carrinho) VALUES (@idcliente, 0)";
+                MySqlCommand cmdCarrinho = new MySqlCommand(queryCarrinho, conn);
+                cmdCarrinho.Parameters.AddWithValue("@idcliente", idUsuario);
+                cmdCarrinho.ExecuteNonQuery();
             }
         }
 
@@ -103,5 +109,40 @@ namespace PegadaChave.Data
             }
         }
 
+        public ClienteDTO ClientePorId(int idCliente)
+        {
+            ClienteDTO cliente = null;
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"SELECT Cliente.*, Usuario.* 
+                         FROM Cliente 
+                         INNER JOIN Usuario ON Cliente.id_usuario = Usuario.id_usuario 
+                         WHERE Cliente.id_cliente = @idcliente";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idcliente", idCliente);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        cliente = new ClienteDTO();
+                        cliente.idCliente = reader.GetInt32("id_cliente");
+                        cliente.idUsuario = reader.GetInt32("id_usuario");
+                        cliente.cpfCliente = reader.GetString("cpf_cliente");
+                        cliente.dataNascimentoCliente = reader.GetDateTime("data_nascimento_cliente");
+                        cliente.sexoCliente = (PegadaChave.Models.DTOs.Sexocliente)Enum.Parse(typeof(PegadaChave.Models.DTOs.Sexocliente), reader.GetString("sexo_cliente"));
+                        cliente.celularCliente = reader.GetString("celular_cliente");
+                        cliente.nomeUsuario = reader.GetString("nome_usuario");
+                        cliente.emailUsuario = reader.GetString("email_usuario");
+                        cliente.senhaUsuario = reader.GetString("senha_usuario");
+                    }
+                }
+            }
+
+            return cliente;
+        }
     }
 }
