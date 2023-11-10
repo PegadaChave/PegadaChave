@@ -40,7 +40,7 @@ namespace PegadaChave.Controllers
 
             // Passamos o resultado da escolha para a view
             ViewBag.SortOrder = sortOrder;
-
+            ViewBag.Genero = genero;
             return View(produtos);
         }
     }
