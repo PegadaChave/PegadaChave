@@ -15,6 +15,7 @@ namespace PegadaChave.Models.DTOs
         public CondicaoProduto CondicaoProduto { get; set; }
         public float PrecoProduto { get; set; }
         public string ImagemProduto { get; set; }
+        public GeneroProduto GeneroProduto { get; set; }
         public int EstoqueProduto { get; set; }
     }
 
@@ -37,5 +38,11 @@ namespace PegadaChave.Models.DTOs
         Usado,
         Novo,
         Recondicionado
+    }
+
+    public enum GeneroProduto
+    {
+        Masculino,
+        Feminino
     }
 }

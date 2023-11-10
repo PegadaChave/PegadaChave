@@ -41,6 +41,10 @@ public class Produto
     [Display(Name = "Imagem do Produto")]
     public string ImagemProduto { get; set; }
 
+    [Required(ErrorMessage = "O gênero do produto é obrigatório.")]
+    [Display(Name = "Gênero do Produto")]
+    public GeneroProduto GeneroProduto { get; set; }
+
     [Required(ErrorMessage = "O estoque do produto é obrigatório.")]
     [Display(Name = "Estoque do Produto")]
     public int EstoqueProduto { get; set; }
@@ -65,4 +69,10 @@ public enum CondicaoProduto
     Usado,
     Novo,
     Recondicionado
+}
+
+public enum GeneroProduto
+{
+    Masculino,
+    Feminino
 }
