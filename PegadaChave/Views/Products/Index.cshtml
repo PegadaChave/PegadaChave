@@ -16,11 +16,24 @@
         <!-- Título da página -->
         <div class="row mb-5" style="margin-bottom: 100px !important">
             <div class="col-md-6">
-                <h3 style="padding-left: 20%">### PRODUTOS</h3>
+                <h3 style="padding-left: 20%">@Model.Count PRODUTOS</h3>
             </div>
             <div class="col-md-6 d-flex justify-content-end" style="padding-right: 10%">
-                <a class= "header-product">FILTRAR</a>
-                <a class= "header-product">ORDENAR</a>
+                <a class="header-product">FILTRAR</a>
+                <a class="header-product" href="@Url.Action("Index", "Products", new { sortOrder = ViewBag.SortOrder })">
+                    @if (ViewBag.SortOrder == "preco_asc")
+                    {
+                        @:ORDENAR $↓
+                    }
+                    else if (ViewBag.SortOrder == "preco_desc")
+                    {
+                        @:ORDENAR $↑
+                    }
+                    else
+                    {
+                        @:ORDENAR
+                    }
+                </a>
             </div>
         </div>
 
