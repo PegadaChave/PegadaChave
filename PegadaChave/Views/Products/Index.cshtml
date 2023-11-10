@@ -26,13 +26,13 @@
 
         <!-- Lista de produtos -->
         <div class="row d-flex justify-content-center" style="margin-left: 0px !important; margin-right: 0px !important">
-            @for (int i = 1; i <= 9; i++)
+            @foreach (var produto in Model)
             {
                 <div class="col-md-4">
                     <div class="product text-center">
-                        <img src="~/Content/Image/Test/Gucci-Tshirt.jpg" alt="Produto" width="323" height="419" class="mx-auto my-3">
-                        <h4>Nome do Produto</h4>
-                        <p>Preço: $99.99</p>
+                        <img src="@Url.Content(produto.ImagemProduto)" alt="Produto" width="323" height="419" class="mx-auto my-3">
+                        <h4>@produto.NomeProduto</h4>
+                        <p>Preço: $@produto.PrecoProduto</p>
                     </div>
                 </div>
             }
