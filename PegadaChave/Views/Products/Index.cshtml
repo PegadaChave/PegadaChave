@@ -20,6 +20,7 @@
             </div>
             <div class="col-md-6 d-flex justify-content-end" style="padding-right: 10%">
                 <a class="header-product">FILTRAR</a>
+                <!-- O botão de ordenar recebe do Controller a variável sortOrder e adequa o ícone para o tipo definido -->
                 <a class="header-product" href="@Url.Action("Index", "Products", new { sortOrder = ViewBag.SortOrder })">
                     @if (ViewBag.SortOrder == "preco_asc")
                     {
