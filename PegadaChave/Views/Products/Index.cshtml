@@ -16,23 +16,37 @@
         <!-- Título da página -->
         <div class="row mb-5" style="margin-bottom: 100px !important">
             <div class="col-md-6">
-                <h3 style="padding-left: 20%">### PRODUTOS</h3>
+                <h3 style="padding-left: 20%">@Model.Count PRODUTOS</h3>
             </div>
             <div class="col-md-6 d-flex justify-content-end" style="padding-right: 10%">
-                <a class= "header-product">FILTRAR</a>
-                <a class= "header-product">ORDENAR</a>
+                <a class="header-product">FILTRAR</a>
+                <!-- O botão de ordenar recebe do Controller a variável sortOrder e adequa o ícone para o tipo definido -->
+                <a class="header-product" href="@Url.Action("Index", "Products", new { sortOrder = ViewBag.SortOrder })">
+                    @if (ViewBag.SortOrder == "preco_asc")
+                    {
+                        @:ORDENAR $↓
+                    }
+                    else if (ViewBag.SortOrder == "preco_desc")
+                    {
+                        @:ORDENAR $↑
+                    }
+                    else
+                    {
+                        @:ORDENAR
+                    }
+                </a>
             </div>
         </div>
 
         <!-- Lista de produtos -->
         <div class="row d-flex justify-content-center" style="margin-left: 0px !important; margin-right: 0px !important">
-            @for (int i = 1; i <= 9; i++)
+            @foreach (var produto in Model)
             {
                 <div class="col-md-4">
                     <div class="product text-center">
-                        <img src="~/Content/Image/Test/Gucci-Tshirt.jpg" alt="Produto" width="323" height="419" class="mx-auto my-3">
-                        <h4>Nome do Produto</h4>
-                        <p>Preço: $99.99</p>
+                        <img src="@Url.Content(produto.ImagemProduto)" alt="Produto" width="323" height="419" class="mx-auto my-3">
+                        <h4>@produto.NomeProduto</h4>
+                        <p>Preço: $@produto.PrecoProduto</p>
                     </div>
                 </div>
             }
