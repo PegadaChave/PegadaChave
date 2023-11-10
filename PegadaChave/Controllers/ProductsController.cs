@@ -10,17 +10,18 @@ namespace PegadaChave.Controllers
 {
     public class ProductsController : Controller
     {
-        // Chamada do ProdutoCRUD via construtor
+
         private ProdutoCRUD produtoCRUD = new ProdutoCRUD();
 
-        // GET: Products
-        // Existe uma variável interna para dizer como devem ser ordenados os itens (string sortOrder)
-        public ActionResult Index(string sortOrder)
+        public ActionResult Index(string sortOrder, string genero)
         {
-            // Chamando o método Read do ProdutoCRUD para retornar uma lista de todos os produtos
             var produtos = produtoCRUD.Read();
 
-            // Usamos a string sortOrder para definir que tipo de ordenação o botão efetuará
+            if (!string.IsNullOrEmpty(genero))
+            {
+                produtos = produtos.Where(p => p.GeneroProduto.ToString().ToLower() == genero.ToLower()).ToList();
+            }
+
             switch (sortOrder)
             {
                 case "preco_asc":
