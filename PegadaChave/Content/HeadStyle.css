@@ -1,44 +1,149 @@
-﻿.navbar-header {
-    background-color: white;
-    color: black;
+﻿@font-face {
+    font-family: CreatoExtraBold;
+    src: url(font/CreatoDisplay-ExtraBold.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.nav-row {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.blank {
+    width: 33%;
+}
+
+.logo-row {
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo1 {
+    display:none;
+}
+
+.logo {
     display: flex;
     justify-content: center;
+    width: 33%;
 }
 
-.navbar-brand-header {
-    text-align: center;
-    font-size: 3rem;
+    .logo img {
+        height: 48px;
+    }
+
+        .logo img:hover {
+            opacity: 0.6;
+            transition: 0.3s;
+        }
+
+.itens {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    width: 33%;
 }
 
-.navbar-nav-header {
-    flex-grow: 1;
-    justify-content: flex-start; /* Mudar para flex-start para alinhar à esquerda */
-    align-items: center; /* Alinhar verticalmente ao centro */
+    .itens .item {
+        margin-right: 20px;
+    }
+
+.item img {
+    height: 24px;
+    width: 24px;
 }
 
-.nav-link-header {
+    .item img:hover {
+        opacity: 0.6;
+        scale: 1.15;
+        transition: 0.3s;
+    }
+
+.genders-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
     justify-content: center;
-    color: black;
-}
-.icone-header {
-    width: 20px !important;
-    height: 20px !important;
 }
 
-.text-align-right {
-    text-align: right;
+    .genders-row a {
+        font-family: CreatoExtraBold;
+        letter-spacing: 3px;
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        font-size: 24px;
+        color: black;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+        .genders-row a:hover {
+            opacity: 0.6;
+            border-bottom: 2px solid;
+            animation: vibrateBlinkAndRotate 0.5s ease;
+            animation-iteration-count: 2;
+        }
+
+
+@media screen and (max-width: 765px) {
+    .logo img {
+        height: 28px;
+        display:none;
+    }
+
+    .logo1 {
+        display: block;
+        margin-bottom:10px;
+    }
+        .logo1 img {
+            height: 48px;
+        }
+
+    .itens .item {
+        margin-right: 15px;
+    }
+
+    .item img {
+        height: 18px;
+        width: 18px;
+    }
+
+    .genders-row a {
+        font-size: 20px;
+    }
+    .logo-row .blank {
+        display: none;
+    }
 }
 
-.masc {
-    margin-right: 10%;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-}
+@keyframes vibrateBlinkAndRotate {
+    0%, 100% {
+        transform: translateX(0);
+    }
 
-.femi {
-    margin-left: 10%;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 3px;
+    25% {
+        transform: translateX(-1px);
+    }
+
+    50% {
+        transform: translateX(1px);
+    }
+
+    75% {
+        transform: translateX(-1px);
+    }
 }
