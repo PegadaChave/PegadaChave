@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/FooterStyle.css")
     @Styles.Render("~/Content/HeadStyle.css")
-    <style>
+    @*<style>
         nav li {
             padding: 0px 8px;
             !important
@@ -18,59 +18,57 @@
             padding: 24px 0px 0px 0px;
             !important
         }
-    </style>
+    </style>*@
 </head>
 <body>
-
-
-    <nav class="container-fluid" style="width: auto">
-        <div class="">
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="col-6 text-center">
-                    <a class="navbar-brand navbar-brand-header" href="#">Billy Duke</a>
+    <header>
+        <nav>
+            <div class="nav-row logo-row">
+                <div class="blank"></div>
+                <div class="logo">
+                    <a href="">
+                        <img src="~/Content/Image/ImagemAuxiliarProjeto/logoextenso.png" alt="Logo do site">
+                    </a>
                 </div>
-                <div class="col-3 d-flex justify-content-between">
-
-                    <ul class="list-unstyled d-flex align-items-center" style="margin-bottom: 0px">
-                        <li>
-                            <a href="#"><i><img src="~/Content/Image/Icons/lupa.png" class="icone-header" /></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i><img src="~/Content/Image/Icons/pessoa.png" class="icone-header" /></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i><img src="~/Content/Image/Icons/coracao.png" class="icone-header" /></i></a>
-                        </li>
-                        <li>
-                            <a href="#"><i><img src="~/Content/Image/Icons/bolsa.png" class="icone-header" /></i></a>
-                        </li>
-                    </ul>
+                <div class="logo1">
+                    <a href="">
+                        <img src="~/Content/Image/ImagemAuxiliarProjeto/logo.png" alt="Logo do site">
+                    </a>
+                </div>
+                <div class="itens">
+                    <div class="item">
+                        <a href="">
+                            <img src="~/Content/Image/ImagemAuxiliarProjeto/lupa.png" alt="Ícone de pesquisa">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="">
+                            <img src="~/Content/Image/ImagemAuxiliarProjeto/pessoa.png" alt="Ícone de perfil">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="">
+                            <img src="~/Content/Image/ImagemAuxiliarProjeto/coracao.png" alt="Ícone de favorito">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="">
+                            <img src="~/Content/Image/ImagemAuxiliarProjeto/bolsa.png" alt="Ícone de carrinho">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="row mb-3 opt_genero">
-            <div class="col-md-6 justify-content-end d-flex">
-                <a class="nav-link masc" href="#">MASCULINO</a>
+            <div class="nav-row genders-row">
+                <a href="">Masculino</a>
+                <a href="">Feminino</a>
             </div>
-            <div class="col-md-6">
-                <a class="nav-link femi" href="#">FEMININO</a>
-            </div>
-
-        </div>
-    </div>
-
-
+        </nav>
+    </header>
 
     <div>
         <div style="min-height: 100%">
-
             @RenderBody()
         </div>
-        <hr />
         <footer class="custom-footer">
             <div class="store-name">Pegada Chave</div>
             <div class="footer-columns">
@@ -101,7 +99,6 @@
             </div>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
