@@ -8,88 +8,99 @@
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/FooterStyle.css")
     @Styles.Render("~/Content/HeadStyle.css")
+    <style>
+        nav li {
+            padding: 0px 8px;
+            !important
+        }
 
+        .opt_genero {
+            padding: 24px 0px 0px 0px;
+            !important
+        }
+    </style>
 </head>
 <body>
-    <header>
-    <nav>
-        <div class="nav-row logo-row">
-            <div class="blank"></div>
-            <div class="logo">
-                <a href="">
-                    <img src="~/Content/Image/ImagemAuxiliarProjeto/logoextenso.png" alt="Logo do site">
-                </a>
-            </div>
-            <div class="logo1">
-                <a href="">
-                    <img src="~/Content/Image/ImagemAuxiliarProjeto/logo.png" alt="Logo do site">
-                </a>
-            </div>
-            <div class="itens">
-                <div class="item">
-                    <a href="">
-                        <img src="~/Content/Image/ImagemAuxiliarProjeto/lupa.png" alt="Ícone de pesquisa">
-                    </a>
+
+
+    <nav class="container-fluid" style="width: auto">
+        <div class="">
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-6 text-center">
+                    <a class="navbar-brand navbar-brand-header" href="#">Billy Duke</a>
                 </div>
-                <div class="item">
-                    <a href="">
-                        <img src="~/Content/Image/ImagemAuxiliarProjeto/pessoa.png" alt="Ícone de perfil">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="">
-                        <img src="~/Content/Image/ImagemAuxiliarProjeto/coracao.png" alt="Ícone de favorito">
-                    </a>
-                </div>
-                <div class="item">
-                    <a href="">
-                        <img src="~/Content/Image/ImagemAuxiliarProjeto/bolsa.png" alt="Ícone de carrinho">
-                    </a>
+                <div class="col-3 d-flex justify-content-between">
+
+                    <ul class="list-unstyled d-flex align-items-center" style="margin-bottom: 0px">
+                        <li>
+                            <a href="#"><i><img src="~/Content/Image/Icons/lupa.png" class="icone-header" /></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i><img src="~/Content/Image/Icons/pessoa.png" class="icone-header" /></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i><img src="~/Content/Image/Icons/coracao.png" class="icone-header" /></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i><img src="~/Content/Image/Icons/bolsa.png" class="icone-header" /></i></a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="nav-row genders-row">
-            <a href="@Url.Action("Index", "Products", new { genero = "masculino" })">Masculino</a>
-            <a href="@Url.Action("Index", "Products", new { genero = "feminino" })">Feminino</a>
         </div>
     </nav>
-</header>
-<main style="min-height: 100%">
-    @RenderBody()
-</main>
 
-<div>
+    <div class="container">
+        <div class="row mb-3 opt_genero">
+            <div class="col-md-6 justify-content-end d-flex">
+                <a class="nav-link masc" href="#">MASCULINO</a>
+            </div>
+            <div class="col-md-6">
+                <a class="nav-link femi" href="#">FEMININO</a>
+            </div>
 
-    <footer class="custom-footer">
-        <div class="store-name">Pegada Chave</div>
-        <div class="footer-columns">
-            <div class="footer-column">
-                <h4>AJUDA</h4>
-                <ul>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Perguntas Frequentes</a></li>
-                    <li><a href="#">Compra</a></li>
-                </ul>
-            </div>
-            <div class="footer-column footer-item">
-                <h4>PRIVACIDADE E LEGALIDADES</h4>
-                <ul>
-                    <li><a href="#">Políticas de Privacidade</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">Código de Ética</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>DOAÇÕES</h4>
-                <p class="no-margin-bottom">Insira seu e-mail de contato:</p>
-                <div class="custom-input">
-                    <input type="text" placeholder="E-mail">
-                    <span class="custom-submit-icon">&#62;</span>
+        </div>
+    </div>
+
+
+
+    <div>
+        <div style="min-height: 100%">
+
+            @RenderBody()
+        </div>
+        <hr />
+        <footer class="custom-footer">
+            <div class="store-name">Pegada Chave</div>
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>AJUDA</h4>
+                    <ul>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Perguntas Frequentes</a></li>
+                        <li><a href="#">Compra</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-item">
+                    <h4>PRIVACIDADE E LEGALIDADES</h4>
+                    <ul>
+                        <li><a href="#">Políticas de Privacidade</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">Código de Ética</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>DOAÇÕES</h4>
+                    <p class="no-margin-bottom">Insira seu e-mail de contato:</p>
+                    <div class="custom-input">
+                        <input type="text" placeholder="E-mail">
+                        <span class="custom-submit-icon">&#62;</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
-</div>
+        </footer>
+    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
