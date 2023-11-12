@@ -235,6 +235,13 @@
     <Content Include="Content\Image\ImagemAuxiliarProjeto\ConjuntoRoupasNike.jpg" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\coracao.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\Favela.jpg" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\HOME\Home01G.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\HOME\Home02G.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\HOME\Home03G.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\HOME\Home04G.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\HOME\Home05G.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\HOME\Home06G.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\HOME\Home07G.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\ICON BD BLK.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\ICON BD WT.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\Logo branca Billy Duke.png" />
