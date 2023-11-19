@@ -3,22 +3,23 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billy Duke - @ViewBag.Title</title>
+    <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Styles.Render("~/Content/FooterStyle.css")
     @Styles.Render("~/Content/HeadStyle.css")
+    @Styles.Render("~/Content/fontes/fontes.css")
     @*<style>
-        nav li {
-            padding: 0px 8px;
-            !important
-        }
+            nav li {
+                padding: 0px 8px;
+                !important
+            }
 
-        .opt_genero {
-            padding: 24px 0px 0px 0px;
-            !important
-        }
-    </style>*@
+            .opt_genero {
+                padding: 24px 0px 0px 0px;
+                !important
+            }
+        </style>*@
 </head>
 <body>
     <header>
@@ -64,40 +65,37 @@
             </div>
         </nav>
     </header>
-    <div>
-        <div style="min-height: 100%">
-            @RenderBody()
-        </div>
-        <footer class="custom-footer">
-            <div class="store-name">Pegada Chave</div>
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h4>AJUDA</h4>
-                    <ul>
-                        <li><a href="#">Contato</a></li>
-                        <li><a href="#">Perguntas Frequentes</a></li>
-                        <li><a href="#">Compra</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column footer-item">
-                    <h4>PRIVACIDADE E LEGALIDADES</h4>
-                    <ul>
-                        <li><a href="#">Políticas de Privacidade</a></li>
-                        <li><a href="#">Cookies</a></li>
-                        <li><a href="#">Código de Ética</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>DOAÇÕES</h4>
-                    <p class="no-margin-bottom">Insira seu e-mail de contato:</p>
-                    <div class="custom-input">
-                        <input type="text" placeholder="E-mail">
-                        <span class="custom-submit-icon">&#62;</span>
-                    </div>
+
+    @RenderBody()
+    <footer class="custom-footer">
+        <div class="store-name">Pegada Chave</div>
+        <div class="footer-columns">
+            <div class="footer-column">
+                <h4>AJUDA</h4>
+                <ul>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Perguntas Frequentes</a></li>
+                    <li><a href="#">Compra</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-item">
+                <h4>PRIVACIDADE E LEGALIDADES</h4>
+                <ul>
+                    <li><a href="#">Políticas de Privacidade</a></li>
+                    <li><a href="#">Cookies</a></li>
+                    <li><a href="#">Código de Ética</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>DOAÇÕES</h4>
+                <p class="no-margin-bottom">Insira seu e-mail de contato:</p>
+                <div class="custom-input">
+                    <input type="text" placeholder="E-mail">
+                    <span class="custom-submit-icon">&#62;</span>
                 </div>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

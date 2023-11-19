@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+header {
+    width: 100%;
+}
+
 nav {
     display: flex;
     flex-direction: column;
@@ -31,7 +35,7 @@ nav {
 }
 
 .logo1 {
-    display:none;
+    display: none;
 }
 
 .logo {
@@ -102,13 +106,14 @@ nav {
 @media screen and (max-width: 765px) {
     .logo img {
         height: 28px;
-        display:none;
+        display: none;
     }
 
     .logo1 {
         display: block;
-        margin-bottom:10px;
+        margin-bottom: 10px;
     }
+
         .logo1 img {
             height: 48px;
         }
@@ -125,6 +130,7 @@ nav {
     .genders-row a {
         font-size: 20px;
     }
+
     .logo-row .blank {
         display: none;
     }

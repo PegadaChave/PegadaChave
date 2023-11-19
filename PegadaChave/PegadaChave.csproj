@@ -228,8 +228,12 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\CheckoutStyle.css" />
+    <Content Include="Content\fontes\demo.html" />
+    <Content Include="Content\fontes\fontes.css" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\BlusaPumaBranca.jpg" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\BlusinhaBrancaPrada.jpg" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\bolsa.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\CamisaAmarelaNike.jpg" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\CamisaPoloHalphy.jpg" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\CamisaPreta.jpg" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\ConjuntoRoupasNike.jpg" />
@@ -244,12 +248,17 @@
     <Content Include="Content\Image\ImagemAuxiliarProjeto\HOME\Home07G.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\ICON BD BLK.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\ICON BD WT.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\JaquetaBrancaAdidas.jpg" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\JaquetajeansArmani.jpg" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\Logo branca Billy Duke.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\Logo preta Billy Duke.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\logo.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\logoextenso.png" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\lupa.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\MoletomMarromLouisvuitton.jpg" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\pessoa.png" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\SaiaxadrezLouisvuitton.jpg" />
+    <Content Include="Content\Image\ImagemAuxiliarProjeto\SueterVermelhoAdidas.jpg" />
     <Content Include="Content\Image\ImagemAuxiliarProjeto\TenisNikeBrancoAzulVermelho.jpg" />
     <Content Include="Content\Image\ImagemProdutoFeminino\BlazerRosaBalmain.jpg" />
     <Content Include="Content\Image\ImagemProdutoFeminino\BlusacroppedRosaLacoste.jpg" />
@@ -307,6 +316,7 @@
     <Content Include="Content\Image\Icons\pessoa.png" />
     <Content Include="Content\ProductStyle.css" />
     <Content Include="Content\HomeStyle.css" />
+    <Content Include="Content\ProdutoDetalheStyle.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -316,6 +326,14 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\fontes\CreatoDisplay-Bold.woff" />
+    <Content Include="Content\fontes\CreatoDisplay-Bold.woff2" />
+    <Content Include="Content\fontes\CreatoDisplay-ExtraBold.woff" />
+    <Content Include="Content\fontes\CreatoDisplay-ExtraBold.woff2" />
+    <Content Include="Content\fontes\CreatoDisplay-Light.woff" />
+    <Content Include="Content\fontes\CreatoDisplay-Light.woff2" />
+    <Content Include="Content\fontes\CreatoDisplay-Medium.woff" />
+    <Content Include="Content\fontes\CreatoDisplay-Medium.woff2" />
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
     <Content Include="Scripts\jquery-3.7.1.min.js" />
@@ -345,11 +363,11 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Checkout\Index.cshtml" />
+    <Content Include="Views\ProductDetail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Cadastro\" />
-    <Folder Include="Views\ProductDetail\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -377,6 +395,9 @@
     <Content Include="Scripts\bootstrap.bundle.js.map" />
     <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
