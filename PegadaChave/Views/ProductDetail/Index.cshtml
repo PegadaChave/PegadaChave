@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Detalhe do produto";
+}
+<head>
+    @Styles.Render("~/Content/ProdutoDetalheStyle.css")
+</head>
+<main>
+    <div class="produto">
+        <div class="area-foto">
+            <div class="produto-foto">
+                <img src="~/Content/Image/ImagemAuxiliarProjeto/BlusinhaBrancaPrada.jpg" />
+            </div>
+            <div class="botao-fav">
+                <a href="">
+                    <img src="~/Content/Image/ImagemAuxiliarProjeto/coracao.png" />
+                </a>
+            </div>
+        </div>
+        <div class="info-produto">
+            <div class="info-row prod-title">
+                <h2>Camisa branca</h2>
+                <p>R$99,90</p>
+            </div>
+            <div class="info-row prod-size">
+                <p>Tamanho: M</p>
+                <a href="">Guia de medidas</a>
+            </div>
+            <div class="info-row prod-carrinho">
+                <button>Adicionar ao carrinho</button>
+            </div>
+        </div>
+    </div>
+    <div class="outros-produtos">
+        <h2>Outros produtos</h2>
+        <div class="o-produtos">
+            <div class="o-produto">
+                <a href="">
+                    <img src="~/Content/Image/ImagemAuxiliarProjeto/CamisaAmarelaNike.jpg" />
+                    <h3>Camisa Amarela da Nike</h3>
+                    <p>R$49,90</p>
+                </a>
+            </div>
+            <div class="o-produto">
+                <a href="">
+                    <img src="~/Content/Image/ImagemAuxiliarProjeto/JaquetaBrancaAdidas.jpg" />
+                    <h3>Jaqueta Branca da Adidas</h3>
+                    <p>R$69,90</p>
+                </a>
+            </div>
+            <div class="o-produto">
+                <a href="">
+                    <img src="~/Content/Image/ImagemAuxiliarProjeto/MoletomMarromLouisvuitton.jpg" />
+                    <h3>Moletom Marrom da Louis Vuitton</h3>
+                    <p>R$99,90</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>

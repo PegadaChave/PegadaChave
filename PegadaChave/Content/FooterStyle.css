@@ -3,6 +3,7 @@
     color: white;
     padding: 20px 0;
     text-align: center;
+    width: 100%;
 }
 
 .store-name {
@@ -71,7 +72,7 @@ input[type="text"] {
     color: white;
     cursor: pointer;
 }
+
 .no-margin-bottom {
     margin-bottom: 0; /* Substitui a margem inferior do Bootstrap */
 }
-
