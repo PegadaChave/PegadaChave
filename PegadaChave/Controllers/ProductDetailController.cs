@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PegadaChave.Data;
+using PegadaChave.Models.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,13 @@ namespace PegadaChave.Controllers
 {
     public class ProductDetailController : Controller
     {
-        // GET: ProductDetail
-        public ActionResult Index()
+        private ProdutoCRUD produtoCRUD = new ProdutoCRUD();
+        public ActionResult Index(int id)
         {
-            return View();
+            ProdutoDTO produtoEspecifico = produtoCRUD.ProdutoPorId(id);
+            List<ProdutoDTO> listaProdutos = produtoCRUD.Read();
+
+            return View(new Tuple<ProdutoDTO, List<ProdutoDTO>>(produtoEspecifico, listaProdutos));
         }
     }
 }
