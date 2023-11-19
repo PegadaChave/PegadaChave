@@ -44,7 +44,9 @@
             {
                 <div class="col-md-4">
                     <div class="product text-center">
-                        <img src="@Url.Content(produto.ImagemProduto)" alt="Produto" width="323" height="419" class="mx-auto my-3">
+                        <a href="@Url.Action("Index", "ProductDetail", new { id = produto.IdProduto })">
+                            <img src="@Url.Content(produto.ImagemProduto)" alt="Produto" width="323" height="419" class="mx-auto my-3">
+                        </a>
                         <h4>@produto.NomeProduto</h4>
                         <p>Preço: $@produto.PrecoProduto</p>
                     </div>
