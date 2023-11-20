@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Carrinho de Compras";
+}
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    @Styles.Render("~/Content/CarrinhoStyle.css")
+</head>
+
+<body style="background-color: #f2f2f2">
+
+    <!-- Menu Hamburguer -->
+    <div id="sidebar" style="position: fixed; left: 0; top: 0; height: 100%; width: 250px; background-color: white; padding: 15px; display: none;">
+        <button id="closeSidebar">X</button>
+        <h4>Nome do Usuário</h4>
+        <p>Tipo de Usuário</p>
+        <a href="#">Sair</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div id="content" style="padding: 5%; margin: 5%; border-radius: 25px; background-color: white; transition: transform 0.3s;">
+        <button id="sidebarCollapse" class="btn btn-close-white">
+            @*<i class="bi bi-list"></i>*@
+        </button>
+
+        <h2>Carrinho de Compras</h2>
+
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Substitua o botão por um link estilizado -->
+                <a href="#" class="btn btn-link">Selecionar Todos</a>
+                <a href="#" class="btn btn-link"> Excluir</a>
+            </div>
+        </div>
+
+        <div class="row" style="border-top: 2px solid rgba(204, 204, 204, 0.5); margin-top: 10px; padding-top: 10px;">
+            @for (int i = 0; i < 3; i++)
+            {
+                <div class="col-md-12" style="border-bottom: 2px solid rgba(204, 204, 204, 0.5); margin-bottom: 10px; padding-bottom: 10px;">
+                    <div class="row">
+                        <div class="col-md-1 d-flex align-items-center">
+                            <input type="checkbox" />
+                        </div>
+                        <div class="col-md-2">
+                            <img src="~/Content/Image/Test/Gucci-Tshirt.jpg" alt="Product Image" class="img-fluid" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <strong>Nome do Produto</strong>
+                                </div>
+                                <div class="col-md-12">
+                                    Tamanho: M
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    R$ 99,99
+                                </div>
+                                <div class="col-md-12">
+                                    Até 3x de R$ 33,33 sem juros
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="row" style="margin-top: 10px; padding-top: 10px; padding-bottom: 10px; border-bottom: 2px solid rgba(204, 204, 204, 0.5)">
+            <div class="col-md-12 text-right" style="text-align: end">
+                Total (3 produtos): R$ 299,97
+
+            </div>
+        </div>
+        <div class="row  container justify-content-end">
+
+            <div style="padding-top: 2%" class="text-right">
+
+                <button type="button" class="btn btn-primary">Finalizar Compra</button>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').animate({
+                    width: "toggle"
+                }, 350);
+                $('#content').toggleClass('menu-open'); // Adiciona ou remove a classe 'menu-open' ao conteúdo principal
+            });
+
+            $('#closeSidebar').on('click', function () {
+                $('#sidebar').animate({
+                    width: "toggle"
+                }, 350);
+                $('#content').toggleClass('menu-open'); // Adiciona ou remove a classe 'menu-open' ao conteúdo principal
+            });
+        });
+    </script>
+
+    <style>
+        /* Adicione estas linhas ao seu CSS ou cabeçalho */
+        #content.menu-open {
+            transform: translateX(250px); /* Ajusta a posição horizontal quando o menu está aberto */
+        }
+    </style>
+</body>
