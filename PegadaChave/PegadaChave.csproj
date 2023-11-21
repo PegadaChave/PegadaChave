@@ -184,6 +184,7 @@
     <Compile Include="Data\ClienteCRUD.cs" />
     <Compile Include="Data\EnderecoCRUD.cs" />
     <Compile Include="Data\FuncionarioCRUD.cs" />
+    <Compile Include="Data\LoginCRUD.cs" />
     <Compile Include="Data\PedidoCRUD.cs" />
     <Compile Include="Data\ProdutoCRUD.cs" />
     <Compile Include="Global.asax.cs">
@@ -202,6 +203,7 @@
     <Compile Include="Models\DTOs\ProdutoDTO.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Funcionario.cs" />
+    <Compile Include="Models\Globals.cs" />
     <Compile Include="Models\ItemPedido.cs" />
     <Compile Include="Models\Look.cs" />
     <Compile Include="Models\LookProduto.cs" />

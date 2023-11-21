@@ -8,12 +8,17 @@ namespace PegadaChave.Controllers
 {
     public class LoginController : Controller
     {
-        // GET: Login
+        private LoginCRUD loginCRUD = new LoginCRUD();
+
         public ActionResult Index()
         {
             return View();
         }
 
-        
+        public ActionResult Logout()
+        {
+            loginCRUD.DeslogarUsuario();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

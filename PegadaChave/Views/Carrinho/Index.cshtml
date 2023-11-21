@@ -13,9 +13,9 @@
     <!-- Menu Hamburguer -->
     <div id="sidebar" style="position: fixed; left: 0; top: 0; height: 100%; width: 250px; background-color: white; padding: 15px; display: none;">
         <button id="closeSidebar">X</button>
-        <h4>Nome do Usuário</h4>
+        <h4>@Model.Item2.nomeUsuario</h4>
         <p>Tipo de Usuário</p>
-        <a href="#">Sair</a>
+        <a href="@Url.Action("Logout", "Login")">Sair</a>
     </div>
 
     <!-- Conteúdo Principal -->
@@ -35,7 +35,7 @@
         </div>
 
         <div class="row" style="border-top: 2px solid rgba(204, 204, 204, 0.5); margin-top: 10px; padding-top: 10px;">
-            @for (int i = 0; i < 3; i++)
+            @for (int i = 0; i < Model.Item3.Count; i++)
             {
                 <div class="col-md-12" style="border-bottom: 2px solid rgba(204, 204, 204, 0.5); margin-bottom: 10px; padding-bottom: 10px;">
                     <div class="row">
@@ -43,48 +43,46 @@
                             <input type="checkbox" />
                         </div>
                         <div class="col-md-2">
-                            <img src="~/Content/Image/Test/Gucci-Tshirt.jpg" alt="Product Image" class="img-fluid" />
+                            <img src="@Url.Content(Model.Item3[i].ImagemProduto)" alt="Product Image" class="img-fluid" />
                         </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <strong>Nome do Produto</strong>
+                                    <strong>@Model.Item3[i].NomeProduto</strong>
                                 </div>
                                 <div class="col-md-12">
-                                    Tamanho: M
+                                    Tamanho: @Model.Item3[i].TamanhoProduto
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="row">
                                 <div class="col-md-12">
-                                    R$ 99,99
+                                    R$ @Model.Item3[i].PrecoProduto.ToString("F2")
                                 </div>
                                 <div class="col-md-12">
-                                    Até 3x de R$ 33,33 sem juros
+                                    Até 3x de R$ @((Model.Item3[i].PrecoProduto / 3).ToString("F2")) sem juros
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             }
-        </div>
+            <div class="row" style="margin-top: 10px; padding-top: 10px; padding-bottom: 10px; border-bottom: 2px solid rgba(204, 204, 204, 0.5)">
+                <div class="col-md-12 text-right" style="text-align: end">
+                    Total (@Model.Item1.Produtos.Count): R$ @Model.Item1.TotalCarrinho
 
-        <div class="row" style="margin-top: 10px; padding-top: 10px; padding-bottom: 10px; border-bottom: 2px solid rgba(204, 204, 204, 0.5)">
-            <div class="col-md-12 text-right" style="text-align: end">
-                Total (3 produtos): R$ 299,97
-
+                </div>
             </div>
-        </div>
-        <div class="row  container justify-content-end">
+            <div class="row  container justify-content-end">
 
-            <div style="padding-top: 2%" class="text-right">
+                <div style="padding-top: 2%" class="text-right">
 
-                <button type="button" class="btn btn-primary">Finalizar Compra</button>
+                    <button type="button" class="btn btn-primary">Finalizar Compra</button>
+                </div>
             </div>
-        </div>
 
-    </div>
+        </div>
     <script>
         $(document).ready(function () {
             $('#sidebarCollapse').on('click', function () {

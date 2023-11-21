@@ -1,61 +1,63 @@
-﻿@using System.Linq
+﻿    @using System.Linq
 
-@{
-    ViewBag.Title = "Detalhe do produto";
-}
-<head>
-    @Styles.Render("~/Content/ProdutoDetalheStyle.css")
-</head>
-<main>
-    <div class="produto">
-        <div class="area-foto">
-            <div class="produto-foto">
-                <img src="@Url.Content(@Model.Item1.ImagemProduto)" />
+    @{
+        ViewBag.Title = "Detalhe do produto";
+    }
+    <head>
+        @Styles.Render("~/Content/ProdutoDetalheStyle.css")
+    </head>
+    <main>
+        <div class="produto">
+            <div class="area-foto">
+                <div class="produto-foto">
+                    <img src="@Url.Content(@Model.Item1.ImagemProduto)" />
+                </div>
+                <div class="botao-fav">
+                    <a href="">
+                        <img src="~/Content/Image/ImagemAuxiliarProjeto/coracao.png" />
+                    </a>
+                </div>
             </div>
-            <div class="botao-fav">
-                <a href="">
-                    <img src="~/Content/Image/ImagemAuxiliarProjeto/coracao.png" />
-                </a>
-            </div>
-        </div>
-        <div class="info-produto">
-            <div class="info-row prod-title">
-                <h2>@Model.Item1.NomeProduto</h2>
-                <p>@Model.Item1.PrecoProduto</p>
-            </div>
-            <div class="info-row prod-size">
-                <p>Tamanho: @Model.Item1.TamanhoProduto</p>
-                <a href="">Guia de medidas</a>
-            </div>
-            <div class="info-row prod-carrinho">
-                <button>Adicionar ao carrinho</button>
-            </div>
-        </div>
-    </div>
-            <div class="outros-produtos">
-                <h2>Outros produtos</h2>
-                <div class="o-produtos">
-                    @{
-                        int contador = 0;
-                        foreach (var produto in Model.Item2)
-                        {
-                            if (contador >= 3)
-                            {
-                                break;
-                            }
-                            <div class="o-produto">
-                                <a href="@Url.Action("Index", "ProductDetail", new { id = produto.IdProduto })">
-                                    <img src="@Url.Content(@produto.ImagemProduto)" />
-                                    <h3>@produto.NomeProduto</h3>
-                                    <p>@produto.PrecoProduto</p>
-                                </a>
-                            </div>
-                            contador++;
-                        }
+            <div class="info-produto">
+                <div class="info-row prod-title">
+                    <h2>@Model.Item1.NomeProduto</h2>
+                    <p>@Model.Item1.PrecoProduto</p>
+                </div>
+                <div class="info-row prod-size">
+                    <p>Tamanho: @Model.Item1.TamanhoProduto</p>
+                    <a href="">Guia de medidas</a>
+                </div>
+                <div class="info-row prod-carrinho">
+                    @using (Html.BeginForm("AdicionarAoCarrinho", "Carrinho", FormMethod.Post))
+                    {
+                        @Html.Hidden("IdClienteLogado", (int)(ViewBag.IdClienteLogado ?? 1))
+                        @Html.Hidden("IdProduto", (int)Model.Item1.IdProduto)
+                        <button type="submit">Adicionar ao carrinho</button>
                     }
                 </div>
-                </a>
             </div>
         </div>
-    </div>
-</main>
+                <div class="outros-produtos">
+                    <h2>Outros produtos</h2>
+                    <div class="o-produtos">
+                        @{
+                            int contador = 0;
+                            foreach (var produto in Model.Item2)
+                            {
+                                if (contador >= 3)
+                                {
+                                    break;
+                                }
+                                <div class="o-produto">
+                                    <a href="@Url.Action("Index", "ProductDetail", new { id = produto.IdProduto })">
+                                        <img src="@Url.Content(@produto.ImagemProduto)" />
+                                        <h3>@produto.NomeProduto</h3>
+                                        <p>@produto.PrecoProduto</p>
+                                    </a>
+                                </div>
+                                contador++;
+                            }
+                        }
+                    </div>
+                </div>
+    </main>

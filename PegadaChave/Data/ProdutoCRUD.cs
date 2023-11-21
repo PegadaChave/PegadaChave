@@ -136,5 +136,44 @@ namespace PegadaChave.Data
             }
             return produto;
         }
+
+        public List<ProdutoDTO> ProdutosPorIds(List<int> idsProdutos)
+        {
+            List<ProdutoDTO> produtos = new List<ProdutoDTO>();
+
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                foreach (var idProduto in idsProdutos)
+                {
+                    string query = "SELECT * FROM Produto WHERE id_produto = @idproduto";
+                    MySqlCommand cmd = new MySqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@idproduto", idProduto);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            ProdutoDTO produto = new ProdutoDTO();
+                            produto.IdProduto = reader.GetInt32("id_produto");
+                            produto.NomeProduto = reader.GetString("nome_produto");
+                            produto.DescricaoProduto = reader.GetString("descricao_produto");
+                            produto.CategoriaProduto = (PegadaChave.Models.DTOs.CategoriaProduto)Enum.Parse(typeof(PegadaChave.Models.DTOs.CategoriaProduto), reader.GetString("categoria_produto"));
+                            produto.TamanhoProduto = (PegadaChave.Models.DTOs.TamanhoProduto)Enum.Parse(typeof(PegadaChave.Models.DTOs.TamanhoProduto), reader.GetString("tamanho_produto"));
+                            produto.CondicaoProduto = (PegadaChave.Models.DTOs.CondicaoProduto)Enum.Parse(typeof(PegadaChave.Models.DTOs.CondicaoProduto), reader.GetString("condicao_produto"));
+                            produto.PrecoProduto = reader.GetFloat("preco_produto");
+                            produto.ImagemProduto = reader.GetString("imagem_produto");
+                            produto.EstoqueProduto = reader.GetInt32("estoque_produto");
+                            produto.GeneroProduto = (PegadaChave.Models.DTOs.GeneroProduto)Enum.Parse(typeof(PegadaChave.Models.DTOs.GeneroProduto), reader.GetString("genero_produto"));
+                            produtos.Add(produto);
+                        }
+                    }
+                }
+            }
+
+            return produtos;
+        }
+
     }
 }
