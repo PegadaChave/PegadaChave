@@ -9,9 +9,11 @@ namespace PegadaChave.Models
     {
         static Globals()
         {
-            IdUsuarioLogado = 0;
+            IdClienteLogado = 0;
+            IdFuncionarioLogado = 0;    
         }
-        public static int IdUsuarioLogado { get; set; }
+        public static int IdClienteLogado { get; set; }
+        public static int IdFuncionarioLogado { get; set; }
     }
 
 }

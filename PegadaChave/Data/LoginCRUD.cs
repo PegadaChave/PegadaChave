@@ -11,7 +11,7 @@ public class LoginCRUD
     {
         using (SqlConnection conn = new SqlConnection(connectionString))
         {
-            string query = "SELECT id_usuario FROM Usuario WHERE email_usuario = @email AND senha_usuario = @senha";
+            string query = "SELECT id_usuario, tipo_usuario FROM Usuario WHERE email_usuario = @email AND senha_usuario = @senha";
             SqlCommand cmd = new SqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@senha", senha);
@@ -20,7 +20,33 @@ public class LoginCRUD
             if (reader.HasRows)
             {
                 reader.Read();
-                return reader.GetInt32(0);
+                string tipoUsuario = reader.GetString(1);
+                int idUsuario = reader.GetInt32(0);
+
+                if (tipoUsuario == "Cliente")
+                {
+                    string queryCliente = "SELECT id_cliente FROM Cliente WHERE id_usuario = @idusuario";
+                    SqlCommand cmdCliente = new SqlCommand(queryCliente, conn);
+                    cmdCliente.Parameters.AddWithValue("@idusuario", idUsuario);
+                    int idCliente = Convert.ToInt32(cmdCliente.ExecuteScalar());
+
+                    Globals.IdClienteLogado = idCliente;
+                    return idCliente;
+                }
+                else if (tipoUsuario == "Funcionario")
+                {
+                    string queryFuncionario = "SELECT id_funcionario FROM Funcionario WHERE id_usuario = @idusuario";
+                    SqlCommand cmdFuncionario = new SqlCommand(queryFuncionario, conn);
+                    cmdFuncionario.Parameters.AddWithValue("@idusuario", idUsuario);
+                    int idFuncionario = Convert.ToInt32(cmdFuncionario.ExecuteScalar());
+
+                    Globals.IdFuncionarioLogado = idFuncionario;
+                    return idFuncionario;
+                }
+                else
+                {
+                    return 0;
+                }
             }
             else
             {
@@ -28,17 +54,10 @@ public class LoginCRUD
             }
         }
     }
-    public void LogarUsuario(string email, string senha)
-    {
-        int idUsuario = ValidarLogin(email, senha);
-        if (idUsuario != 0)
-        {
-            Globals.IdUsuarioLogado = idUsuario;
-        }
-    }
 
-    public bool UsuarioEstaLogado()
+    public void DeslogarUsuario()
     {
-        return Globals.IdUsuarioLogado != 0;
+        Globals.IdClienteLogado = 0;
+        Globals.IdFuncionarioLogado = 0;
     }
 }

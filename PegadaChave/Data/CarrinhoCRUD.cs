@@ -12,7 +12,7 @@ namespace PegadaChave.Data
     {
         string connectionString = ConfigurationManager.ConnectionStrings["MySqlConnection"].ConnectionString;
 
-        public void AdicionarProduto(int idCarrinho, int idProduto, int quantidade)
+        public void AdicionarProduto(int idCliente, int idProduto, int quantidade)
         {
             float precoUnidade = 0;
 
@@ -25,6 +25,12 @@ namespace PegadaChave.Data
                 MySqlCommand cmdProduto = new MySqlCommand(queryProduto, conn);
                 cmdProduto.Parameters.AddWithValue("@idproduto", idProduto);
                 precoUnidade = Convert.ToSingle(cmdProduto.ExecuteScalar());
+
+                // Obtenha o id_carrinho a partir do id_cliente
+                string queryCarrinho = "SELECT id_carrinho FROM Carrinho WHERE id_cliente = @idcliente";
+                MySqlCommand cmdCarrinho = new MySqlCommand(queryCarrinho, conn);
+                cmdCarrinho.Parameters.AddWithValue("@idcliente", idCliente);
+                int idCarrinho = Convert.ToInt32(cmdCarrinho.ExecuteScalar());
 
                 // Inserir na tabela CarrinhoProduto
                 string queryCarrinhoProduto = "INSERT INTO CarrinhoProduto (id_carrinho, id_produto, quantidade_carrinho_produto, preco_unidade_carrinho_produto) VALUES (@idcarrinho, @idproduto, @quantidadecarrinhoproduto, @precoUnidadeCarrinhoProduto)";
