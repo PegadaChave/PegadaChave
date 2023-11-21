@@ -13,7 +13,5 @@ namespace PegadaChave.Controllers
         {
             return View();
         }
-
-        
     }
 }
