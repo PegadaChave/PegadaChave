@@ -14,6 +14,23 @@
             outline: none !important;
             color: black !important;
         }
+        .select {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .select select {
+            border: 0;
+            width 100%;
+            color: rgba(0,0,0,0.6);
+            position: relative; 
+            padding-left: 5px;
+            top: 10px;
+         }
+        select option {
+            color: black;
+        }
     </style>
 </head>
 <body>
@@ -43,19 +60,30 @@
             <form id="signup-form">
                 <h2>Crie uma conta</h2>
                 <div class="input-container">
-                    <input type="text" id="signup-email" placeholder="E-mail ou número de telefone">
+                    <input type="text" id="full-name" name="nomeUsuario" placeholder="Nome completo">
                 </div>
                 <div class="input-container">
-                    <input type="password" id="signup-password" placeholder="Senha">
+                    <input type="text" id="cpf" name="cpfUsuario" placeholder="CPF">
                 </div>
                 <div class="input-container">
-                    <input type="text" id="full-name" placeholder="Nome completo">
+                    <input type="text" id="signup-email" name="emailUsuario" placeholder="E-mail">
                 </div>
                 <div class="input-container">
-                    <input type="text" id="cpf" placeholder="CPF">
+                    <input type="text" id="phone" name="celularUsuario" placeholder="Telefone">
                 </div>
                 <div class="input-container">
-                    <input type="text" id="phone" placeholder="Telefone">
+                    <input type="text" name="dataNascimentoUsuario" placeholder="Data de nascimento" onfocus="this.type='date'" onblur="this.type='text'">
+                </div>
+                <div class="input-container select">
+                    <select name="sexoUsuario">
+                        <option value="">Sexo</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                    </select>
+                    <input readonly style="height: 1px;"/>
+                </div>
+                <div class="input-container">
+                    <input  name="senhaUsuario" type="password" id="signup-password" placeholder="Senha">
                 </div>
                 <div class="checkbox-container">
                     <input type="checkbox" id="agree">
