@@ -1,4 +1,5 @@
 ﻿using PegadaChave.Data;
+using PegadaChave.Models;
 using PegadaChave.Models.DTOs;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace PegadaChave.Controllers
         private ProdutoCRUD produtoCRUD = new ProdutoCRUD();
         public ActionResult Index(int id)
         {
+            ViewBag.IdClienteLogado = Globals.IdClienteLogado;
             ProdutoDTO produtoEspecifico = produtoCRUD.ProdutoPorId(id);
             List<ProdutoDTO> listaProdutos = produtoCRUD.Read();
 

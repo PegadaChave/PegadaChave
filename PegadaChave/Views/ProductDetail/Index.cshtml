@@ -30,7 +30,7 @@
                 <div class="info-row prod-carrinho">
                     @using (Html.BeginForm("AdicionarAoCarrinho", "Carrinho", FormMethod.Post))
                     {
-                        @Html.Hidden("IdClienteLogado", (int)(ViewBag.IdClienteLogado ?? 0))
+                        @Html.Hidden("IdClienteLogado", (int)(ViewBag.IdClienteLogado))
                         @Html.Hidden("IdProduto", (int)Model.Item1.IdProduto)
                         <button type="submit">Adicionar ao carrinho</button>
                     }

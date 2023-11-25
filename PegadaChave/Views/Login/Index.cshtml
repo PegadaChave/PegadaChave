@@ -42,21 +42,22 @@
             <a href="#" onclick="showForm('signup-form')">CADASTRAR</a>
         </div>
         <div class="form-container">
-            <form id="login-form" class="active">
+            <form id="login-form" class="active" action="/Login/Login" method="post">
                 <h2>BEM VINDO(A) DE VOLTA</h2>
                 <p class="subtext">Entre com seu e-mail e senha</p>
 
                 <div class="">
-                    <input type="text" id="email" placeholder="E-mail ou número de telefone">
+                    <input type="text" id="email" name="email" placeholder="E-mail">
                 </div>
 
                 <div class="input-container">
-                    <input type="password" id="password" placeholder="Senha">
+                    <input type="password" id="password" name="senha" placeholder="Senha">
                 </div>
 
                 <a href="#" class="forgot-password">Esqueceu sua senha?</a>
                 <button type="submit" class="submit-button">ENTRAR</button>
             </form>
+
             <form id="signup-form">
                 <h2>Crie uma conta</h2>
                 <div class="input-container">
@@ -76,14 +77,13 @@
                 </div>
                 <div class="input-container select">
                     <select name="sexoUsuario">
-                        <option value="">Sexo</option>
-                        <option value="M">Masculino</option>
-                        <option value="F">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
                     </select>
-                    <input readonly style="height: 1px;"/>
+                    <input readonly style="height: 1px;" />
                 </div>
                 <div class="input-container">
-                    <input  name="senhaUsuario" type="password" id="signup-password" placeholder="Senha">
+                    <input name="senhaUsuario" type="password" id="signup-password" placeholder="Senha">
                 </div>
                 <div class="checkbox-container">
                     <input type="checkbox" id="agree">
