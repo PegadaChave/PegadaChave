@@ -42,10 +42,10 @@
         <div class="row d-flex justify-content-center" style="margin-left: 0px !important; margin-right: 0px !important">
             @foreach (var produto in Model)
             {
-                <div class="col-md-4">
+                <div class="col-xs-3 col-sm-12 col-md-3">
                     <div class="product text-center">
                         <a href="@Url.Action("Index", "ProductDetail", new { id = produto.IdProduto })">
-                            <img src="@Url.Content(produto.ImagemProduto)" alt="Produto" width="323" height="419" class="mx-auto my-3">
+                            <img src="@Url.Content(produto.ImagemProduto)" alt="Produto" style="max-width: 323px; max-height: 419px" class="mx-auto my-3">
                         </a>
                         <h4>@produto.NomeProduto</h4>
                         <p>Preço: $@produto.PrecoProduto</p>

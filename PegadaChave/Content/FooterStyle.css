@@ -37,14 +37,14 @@ li {
     margin-bottom: 5px;
 }
 
-a {
+.custom-anchor {
     text-decoration: none; /* Remova o sublinhado padrão */
     color: rgba(255, 255, 255, 0.75) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.75); /* Defina a borda inferior como transparente */
     transition: border-bottom 0.3s ease;
 }
 
-    a:hover {
+    custom-anchor:hover {
         border-bottom: 1px solid rgba(255, 255, 255, 0.0); /* Ajuste o valor alpha para a transparência desejada (0.5 neste exemplo) */
         color: rgba(255, 255, 255, 0.75);
     }
