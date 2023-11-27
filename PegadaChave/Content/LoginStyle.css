@@ -75,6 +75,8 @@ input {
 .checkbox-container {
     margin-top: 10px;
     text-align: left;
+    display: inline-flex !important;
+    align-items: center;
 }
 
 label {

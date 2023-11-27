@@ -35,13 +35,13 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" style="height: 720px !important;">
         <h1>CONTA</h1>
         <div class="options">
             <a href="#" class="active" onclick="showForm('login-form')">ENTRAR</a>
             <a href="#" onclick="showForm('signup-form')">CADASTRAR</a>
         </div>
-        <div class="form-container">
+        <div class="form-container" >
             <form id="login-form" class="active" action="/Login/Login" method="post">
                 <h2>BEM VINDO(A) DE VOLTA</h2>
                 <p class="subtext">Entre com seu e-mail e senha</p>
@@ -85,7 +85,7 @@
                 <div class="input-container">
                     <input name="senhaUsuario" type="password" id="signup-password" placeholder="Senha">
                 </div>
-                <div class="checkbox-container">
+                <div class="checkbox-container" style="display: inline-block;">
                     <input type="checkbox" id="agree">
                     <label for="agree">Concordo com todas as políticas legais e de privacidade do Billy Duke</label>
                 </div>
