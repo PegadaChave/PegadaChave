@@ -58,25 +58,25 @@
                 <button type="submit" class="submit-button">ENTRAR</button>
             </form>
 
-            <form id="signup-form">
+            <form id="signup-form" action="/Login/Cadastrar" method="post">
                 <h2>Crie uma conta</h2>
                 <div class="input-container">
                     <input type="text" id="full-name" name="nomeUsuario" placeholder="Nome completo">
                 </div>
                 <div class="input-container">
-                    <input type="text" id="cpf" name="cpfUsuario" placeholder="CPF">
+                    <input type="text" id="cpf" name="cpfCliente" placeholder="CPF">
                 </div>
                 <div class="input-container">
                     <input type="text" id="signup-email" name="emailUsuario" placeholder="E-mail">
                 </div>
                 <div class="input-container">
-                    <input type="text" id="phone" name="celularUsuario" placeholder="Telefone">
+                    <input type="text" id="phone" name="celularCliente" placeholder="Telefone">
                 </div>
                 <div class="input-container">
-                    <input type="text" name="dataNascimentoUsuario" placeholder="Data de nascimento" onfocus="this.type='date'" onblur="this.type='text'">
+                    <input type="text" name="dataNascimentoCliente" placeholder="Data de nascimento" onfocus="this.type='date'" onblur="this.type='text'">
                 </div>
                 <div class="input-container select">
-                    <select name="sexoUsuario">
+                    <select name="sexoCliente">
                         <option value="Masculino">Masculino</option>
                         <option value="Feminino">Feminino</option>
                     </select>
